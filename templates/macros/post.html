@@ -49,9 +49,9 @@
 
     {%- if page.taxonomies %}
     <div class="post-tags">
-        {%- for category in page.taxonomies.categories | default(value=[]) %}
-        {% set category_url = get_taxonomy_url(kind="categories", name=category, lang=page.lang) -%}
-        <span>&lbrace;<a {% if not is_excerpt -%}rel="tag" {% endif -%} href="{{ category_url | safe }}">{{ category }}</a>&rbrace;</span>
+        {%- for author in page.taxonomies.categories | default(value=[]) %}
+        {% set author_url = get_taxonomy_url(kind="categories", name=author, lang=page.lang) -%}
+        <span>&lbrace;<a {% if not is_excerpt -%}rel="tag" {% endif -%} href="{{ author_url | safe }}">{{ author }}</a>&rbrace;</span>
         {%- endfor %}
 
         {%- if page.taxonomies.categories and page.taxonomies.tags %}
